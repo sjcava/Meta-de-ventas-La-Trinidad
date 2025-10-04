@@ -285,7 +285,7 @@
             font-size: 1.1em;
             font-weight: 600;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: center;
         }
         
@@ -293,7 +293,8 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-around;
-            height: 280px;
+            height: auto;
+            min-height: 280px;
             gap: 10px;
             padding: 0 60px 0 50px;
             position: relative;
@@ -338,9 +339,17 @@
         }
         
         .grid-line.target {
-            background: rgba(10, 149, 97, 0.3);
-            border-top: 2px solid #0A9561;
+            background: rgba(10, 149, 97, 0.5);
+            border-top: 3px solid #0A9561;
+            height: 3px;
+            z-index: 10;
+        }
+        
+        .grid-line.average {
+            background: rgba(247, 150, 23, 0.5);
+            border-top: 2px dashed #F79617;
             height: 2px;
+            z-index: 9;
         }
         
         .bar-item {
@@ -355,7 +364,7 @@
             width: 100%;
             border-radius: 8px 8px 0 0;
             position: relative;
-            display: block;
+            /* Se eliminaron las propiedades flex que causaban el error de altura */
         }
         
         .bar.s1 {
@@ -379,8 +388,9 @@
             font-weight: bold;
             font-size: 0.85em;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            /* Nuevas propiedades para posicionar el texto correctamente */
             position: absolute;
-            bottom: 8px;
+            bottom: 5px;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
@@ -605,35 +615,61 @@
             }
             
             .chart-container {
-                padding: 15px 10px;
+                padding: 15px 10px 20px 10px;
                 overflow-x: auto;
             }
             
             .chart-title {
-                font-size: 1em;
-                margin-bottom: 15px;
+                font-size: 0.95em;
+                margin-bottom: 25px;
+                padding: 0 5px;
             }
             
             .bar-chart {
-                height: 220px;
+                height: 200px;
                 padding: 0 40px 0 35px;
                 min-width: 320px;
+                margin-top: 10px;
             }
             
             .y-axis {
                 width: 30px;
-                padding: 0 3px 25px 0;
+                padding: 0 3px 18px 0;
             }
             
             .y-label {
-                font-size: 0.7em;
+                font-size: 0.6em;
             }
             
             .grid-lines {
                 left: 35px;
                 right: 40px;
-                bottom: 25px;
-                height: calc(100% - 25px);
+                bottom: 18px;
+                height: calc(100% - 18px);
+            }
+            
+            .bar.s1 {
+                height: 168px !important;
+                max-height: 168px !important;
+                min-height: 168px !important;
+            }
+            
+            .bar.s2 {
+                height: 184px !important;
+                max-height: 184px !important;
+                min-height: 184px !important;
+            }
+            
+            .bar.s3 {
+                height: 170px !important;
+                max-height: 170px !important;
+                min-height: 170px !important;
+            }
+            
+            .bar.s4 {
+                height: 200px !important;
+                max-height: 200px !important;
+                min-height: 200px !important;
             }
             
             .bar-ranking {
@@ -643,13 +679,13 @@
             }
             
             .bar-value {
-                font-size: 0.8em;
-                bottom: 5px;
+                font-size: 0.75em;
+                bottom: 4px;
             }
             
             .bar-label {
-                font-size: 0.8em;
-                margin-top: 6px;
+                font-size: 0.75em;
+                margin-top: 5px;
             }
             
             .weeks-comparison {
@@ -762,9 +798,56 @@
                 font-size: 1.6em;
             }
             
+            .chart-title {
+                font-size: 0.85em;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+            
+            .chart-legend {
+                font-size: 0.7em;
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+            
+            .legend-line {
+                width: 20px;
+            }
+            
             .bar-chart {
                 min-width: 300px;
-                height: 200px;
+                height: auto;
+                min-height: 180px;
+                margin-top: 15px;
+            }
+            
+            .bar-ranking {
+                font-size: 0.6em;
+                padding: 2px 4px;
+                top: -18px;
+            }
+            
+            .y-axis {
+                padding: 0 3px 15px 0;
+            }
+            
+            .y-label {
+                font-size: 0.55em;
+            }
+            
+            .grid-lines {
+                bottom: 15px;
+                height: calc(100% - 15px);
+            }
+            
+            .bar-value {
+                font-size: 0.7em;
+                bottom: 3px;
+            }
+            
+            .bar-label {
+                font-size: 0.7em;
+                margin-top: 4px;
             }
         }
     </style>
@@ -824,6 +907,16 @@
                 
                 <div class="chart-container">
                     <div class="chart-title">% de Cumplimiento por Semana vs Meta</div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-line target"></div>
+                            <span class="legend-text">Meta 100%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-line average"></div>
+                            <span class="legend-text">Promedio Sept: 90%</span>
+                        </div>
+                    </div>
                     <div class="bar-chart">
                         <div class="y-axis">
                             <div class="y-label">100%</div>
@@ -835,6 +928,7 @@
                         </div>
                         <div class="grid-lines">
                             <div class="grid-line target" style="bottom: 100%;"></div>
+                            <div class="grid-line average" style="bottom: 90%;"></div>
                             <div class="grid-line" style="bottom: 80%;"></div>
                             <div class="grid-line" style="bottom: 60%;"></div>
                             <div class="grid-line" style="bottom: 40%;"></div>
