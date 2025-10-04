@@ -277,6 +277,8 @@
             padding: 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             margin-bottom: 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
         .chart-title {
@@ -295,6 +297,7 @@
             gap: 10px;
             padding: 0 60px 0 50px;
             position: relative;
+            min-width: 400px;
         }
         
         .y-axis {
@@ -543,20 +546,225 @@
         }
         
         @media (max-width: 768px) {
-            .main-metrics, .insights-grid, .analysis-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .weeks-comparison {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .header h1 {
-                font-size: 1.8em;
+            body {
+                padding: 10px;
             }
             
             .container {
                 max-width: 100%;
+                border-radius: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header p {
+                font-size: 0.95em;
+            }
+            
+            .alert-banner {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .summary-section {
+                margin: -40px -15px 30px -15px;
+                padding: 20px 15px;
+            }
+            
+            .summary-title {
+                font-size: 1.4em;
+            }
+            
+            .main-metrics {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gauge-circle {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .gauge-inner {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .metric-main {
+                font-size: 1.8em;
+            }
+            
+            .comparison-title {
+                font-size: 1.3em;
+            }
+            
+            .chart-container {
+                padding: 15px 10px;
+                overflow-x: auto;
+            }
+            
+            .chart-title {
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+            
+            .bar-chart {
+                height: 220px;
+                padding: 0 40px 0 35px;
+                min-width: 320px;
+            }
+            
+            .y-axis {
+                width: 30px;
+                padding: 0 3px 25px 0;
+            }
+            
+            .y-label {
+                font-size: 0.7em;
+            }
+            
+            .grid-lines {
+                left: 35px;
+                right: 40px;
+                bottom: 25px;
+                height: calc(100% - 25px);
+            }
+            
+            .bar-ranking {
+                font-size: 0.7em;
+                padding: 2px 6px;
+                top: -22px;
+            }
+            
+            .bar-value {
+                font-size: 0.8em;
+                bottom: 5px;
+            }
+            
+            .bar-label {
+                font-size: 0.8em;
+                margin-top: 6px;
+            }
+            
+            .weeks-comparison {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .week-card {
+                padding: 15px;
+            }
+            
+            .week-title {
+                font-size: 1.1em;
+            }
+            
+            .insights-section {
+                padding: 15px;
+            }
+            
+            .insights-title {
+                font-size: 1.1em;
+            }
+            
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .insight-icon {
+                font-size: 1.3em;
+            }
+            
+            .insight-text {
+                font-size: 0.85em;
+            }
+            
+            .analysis-section {
+                margin: 20px -15px 20px -15px;
+                padding: 20px 15px;
+            }
+            
+            .analysis-title {
+                font-size: 1.3em;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .analysis-value {
+                font-size: 1.3em;
+            }
+            
+            .action-section {
+                margin: 20px -15px -40px -15px;
+                padding: 20px 15px;
+            }
+            
+            .action-title {
+                font-size: 1.3em;
+            }
+            
+            .action-list {
+                padding: 15px;
+            }
+            
+            .action-list h4 {
+                font-size: 1.1em;
+            }
+            
+            .action-list li {
+                font-size: 0.9em;
+            }
+            
+            .projection {
+                font-size: 0.95em;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .header p {
+                font-size: 0.85em;
+            }
+            
+            .summary-title {
+                font-size: 1.2em;
+            }
+            
+            .gauge-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .gauge-inner {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .gauge-percentage {
+                font-size: 1.5em;
+            }
+            
+            .metric-main {
+                font-size: 1.6em;
+            }
+            
+            .bar-chart {
+                min-width: 300px;
+                height: 200px;
             }
         }
     </style>
