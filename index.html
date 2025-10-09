@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Ventas - Septiembre 2025 Completo</title>
+    <title>Reporte de Ventas - Primera Semana Octubre 2025</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -47,7 +47,7 @@
         }
         
         .alert-banner {
-            background: linear-gradient(45deg, #0A9561, #7CC141);
+            background: linear-gradient(45deg, #7CC141, #0A9561);
             color: white;
             padding: 15px;
             text-align: center;
@@ -64,14 +64,6 @@
             margin: -40px -40px 40px -40px;
             padding: 30px 40px;
             border-bottom: 3px solid #0A9561;
-        }
-        
-        .summary-title {
-            font-size: 1.8em;
-            color: #333;
-            text-align: center;
-            margin-bottom: 25px;
-            font-weight: 600;
         }
         
         .main-metrics {
@@ -102,8 +94,8 @@
             height: 140px;
             border-radius: 50%;
             background: conic-gradient(
-                #0A9561 0deg 324deg,
-                #e6e6e6 324deg 360deg
+                #0A9561 0deg 387deg,
+                #e6e6e6 387deg 360deg
             );
             position: relative;
             display: flex;
@@ -163,8 +155,8 @@
             font-size: 1em;
         }
         
-        .deficit {
-            color: #F79617;
+        .surplus {
+            color: #0A9561;
             font-weight: bold;
         }
         
@@ -180,242 +172,41 @@
             font-weight: 600;
         }
         
-        .weeks-comparison {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .week-card {
-            background: white;
+        .week-highlight {
+            background: linear-gradient(135deg, #0A9561, #7CC141);
             border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-        
-        .week-card.week1 {
-            border-left: 5px solid #F79617;
-        }
-        
-        .week-card.week2 {
-            border-left: 5px solid #7CC141;
-        }
-        
-        .week-card.week3 {
-            border-left: 5px solid #0A9561;
-        }
-        
-        .week-card.week4 {
-            border-left: 5px solid #419E46;
-        }
-        
-        .week-title {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .week-card.week1 .week-title {
-            color: #F79617;
-        }
-        
-        .week-card.week2 .week-title {
-            color: #7CC141;
-        }
-        
-        .week-card.week3 .week-title {
-            color: #0A9561;
-        }
-        
-        .week-card.week4 .week-title {
-            color: #419E46;
-        }
-        
-        .week-metrics {
-            display: grid;
-            gap: 6px;
-        }
-        
-        .week-metric {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .week-metric:last-child {
-            border-bottom: none;
-        }
-        
-        .week-metric-label {
-            font-size: 0.8em;
-            color: #666;
-        }
-        
-        .week-metric-value {
-            font-weight: bold;
-            color: #333;
-            font-size: 0.85em;
-        }
-        
-        .improvement {
-            color: #7CC141;
-            font-weight: bold;
-        }
-        
-        .decline {
-            color: #FF6B6B;
-            font-weight: bold;
-        }
-        
-        .chart-container {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .chart-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .bar-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            height: auto;
-            min-height: 280px;
-            gap: 10px;
-            padding: 0 60px 0 50px;
-            position: relative;
-            min-width: 400px;
-        }
-        
-        .y-axis {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 100%;
-            width: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0 5px 30px 0;
-        }
-        
-        .y-label {
-            font-size: 0.75em;
-            color: #666;
-            text-align: right;
-            font-weight: 600;
-        }
-        
-        .grid-lines {
-            position: absolute;
-            left: 50px;
-            right: 60px;
-            bottom: 30px;
-            height: calc(100% - 30px);
-            pointer-events: none;
-        }
-        
-        .grid-line {
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: rgba(0,0,0,0.1);
-            border-top: 1px dashed rgba(0,0,0,0.15);
-        }
-        
-        .grid-line.target {
-            background: rgba(10, 149, 97, 0.5);
-            border-top: 3px solid #0A9561;
-            height: 3px;
-            z-index: 10;
-        }
-        
-        .grid-line.average {
-            background: rgba(247, 150, 23, 0.5);
-            border-top: 2px dashed #F79617;
-            height: 2px;
-            z-index: 9;
-        }
-        
-        .bar-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        
-        .bar {
-            width: 100%;
-            border-radius: 8px 8px 0 0;
-            position: relative;
-            /* Se eliminaron las propiedades flex que causaban el error de altura */
-        }
-        
-        .bar.s1 {
-            background: linear-gradient(to top, #F79617, #FED519);
-        }
-        
-        .bar.s2 {
-            background: linear-gradient(to top, #7CC141, #a8e063);
-        }
-        
-        .bar.s3 {
-            background: linear-gradient(to top, #0A9561, #7CC141);
-        }
-        
-        .bar.s4 {
-            background: linear-gradient(to top, #419E46, #7CC141);
-        }
-        
-        .bar-value {
+            padding: 30px;
             color: white;
-            font-weight: bold;
-            font-size: 0.85em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-            /* Nuevas propiedades para posicionar el texto correctamente */
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
             text-align: center;
+            margin-bottom: 30px;
         }
         
-        .bar-label {
-            margin-top: 8px;
-            font-size: 0.85em;
-            font-weight: 600;
-            color: #666;
+        .week-highlight h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
         }
         
-        .bar-ranking {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #FED519;
-            color: #333;
-            font-size: 0.75em;
+        .week-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .week-stat {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .week-stat-value {
+            font-size: 1.8em;
             font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 5px;
+        }
+        
+        .week-stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
         }
         
         .insights-section {
@@ -587,10 +378,6 @@
                 padding: 20px 15px;
             }
             
-            .summary-title {
-                font-size: 1.4em;
-            }
-            
             .main-metrics {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -610,103 +397,9 @@
                 font-size: 1.8em;
             }
             
-            .comparison-title {
-                font-size: 1.3em;
-            }
-            
-            .chart-container {
-                padding: 15px 10px 20px 10px;
-                overflow-x: auto;
-            }
-            
-            .chart-title {
-                font-size: 0.95em;
-                margin-bottom: 25px;
-                padding: 0 5px;
-            }
-            
-            .bar-chart {
-                height: 200px;
-                padding: 0 40px 0 35px;
-                min-width: 320px;
-                margin-top: 10px;
-            }
-            
-            .y-axis {
-                width: 30px;
-                padding: 0 3px 18px 0;
-            }
-            
-            .y-label {
-                font-size: 0.6em;
-            }
-            
-            .grid-lines {
-                left: 35px;
-                right: 40px;
-                bottom: 18px;
-                height: calc(100% - 18px);
-            }
-            
-            .bar.s1 {
-                height: 168px !important;
-                max-height: 168px !important;
-                min-height: 168px !important;
-            }
-            
-            .bar.s2 {
-                height: 184px !important;
-                max-height: 184px !important;
-                min-height: 184px !important;
-            }
-            
-            .bar.s3 {
-                height: 170px !important;
-                max-height: 170px !important;
-                min-height: 170px !important;
-            }
-            
-            .bar.s4 {
-                height: 200px !important;
-                max-height: 200px !important;
-                min-height: 200px !important;
-            }
-            
-            .bar-ranking {
-                font-size: 0.7em;
-                padding: 2px 6px;
-                top: -22px;
-            }
-            
-            .bar-value {
-                font-size: 0.75em;
-                bottom: 4px;
-            }
-            
-            .bar-label {
-                font-size: 0.75em;
-                margin-top: 5px;
-            }
-            
-            .weeks-comparison {
+            .week-stats {
                 grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            
-            .week-card {
-                padding: 15px;
-            }
-            
-            .week-title {
-                font-size: 1.1em;
-            }
-            
-            .insights-section {
-                padding: 15px;
-            }
-            
-            .insights-title {
-                font-size: 1.1em;
+                gap: 15px;
             }
             
             .insights-grid {
@@ -714,21 +407,9 @@
                 gap: 12px;
             }
             
-            .insight-icon {
-                font-size: 1.3em;
-            }
-            
-            .insight-text {
-                font-size: 0.85em;
-            }
-            
             .analysis-section {
                 margin: 20px -15px 20px -15px;
                 padding: 20px 15px;
-            }
-            
-            .analysis-title {
-                font-size: 1.3em;
             }
             
             .analysis-grid {
@@ -736,122 +417,9 @@
                 gap: 15px;
             }
             
-            .analysis-value {
-                font-size: 1.3em;
-            }
-            
             .action-section {
                 margin: 20px -15px -40px -15px;
                 padding: 20px 15px;
-            }
-            
-            .action-title {
-                font-size: 1.3em;
-            }
-            
-            .action-list {
-                padding: 15px;
-            }
-            
-            .action-list h4 {
-                font-size: 1.1em;
-            }
-            
-            .action-list li {
-                font-size: 0.9em;
-            }
-            
-            .projection {
-                font-size: 0.95em;
-                padding: 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.3em;
-            }
-            
-            .header p {
-                font-size: 0.85em;
-            }
-            
-            .summary-title {
-                font-size: 1.2em;
-            }
-            
-            .gauge-circle {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .gauge-inner {
-                width: 70px;
-                height: 70px;
-            }
-            
-            .gauge-percentage {
-                font-size: 1.5em;
-            }
-            
-            .metric-main {
-                font-size: 1.6em;
-            }
-            
-            .chart-title {
-                font-size: 0.85em;
-                margin-bottom: 12px;
-                line-height: 1.4;
-            }
-            
-            .chart-legend {
-                font-size: 0.65em;
-                gap: 10px;
-                margin-bottom: 25px;
-            }
-            
-            .legend-line {
-                width: 18px;
-            }
-            
-            .legend-text {
-                font-size: 0.8em;
-            }
-            
-            .bar-chart {
-                min-width: 300px;
-                height: auto;
-                min-height: 180px;
-                margin-top: 15px;
-            }
-            
-            .bar-ranking {
-                font-size: 0.6em;
-                padding: 2px 4px;
-                top: -18px;
-            }
-            
-            .y-axis {
-                padding: 0 3px 15px 0;
-            }
-            
-            .y-label {
-                font-size: 0.55em;
-            }
-            
-            .grid-lines {
-                bottom: 15px;
-                height: calc(100% - 15px);
-            }
-            
-            .bar-value {
-                font-size: 0.7em;
-                bottom: 3px;
-            }
-            
-            .bar-label {
-                font-size: 0.7em;
-                margin-top: 4px;
             }
         }
     </style>
@@ -859,30 +427,30 @@
 <body>
     <div class="container">
         <div class="alert-banner">
-            🎉 SEPTIEMBRE EXITOSO: 90% de cumplimiento • Desempeño consistente en todas las semanas
+            🎉 ¡EXCELENTE INICIO! Semana 1 superó la meta en +7.6% • Mejor comienzo que septiembre
         </div>
         
         <div class="header">
-            <h1>📊 REPORTE FINAL SEPTIEMBRE 2025</h1>
-            <p>Análisis Completo del Mes • 01-30 SEPTIEMBRE</p>
+            <h1>📊 REPORTE DE VENTAS OCTUBRE</h1>
+            <p>Primera Semana • 01-07 OCTUBRE 2025</p>
         </div>
         
         <div class="summary-section">
             <div class="main-metrics">
                 <div class="main-metric-card">
-                    <div class="metric-title">💰 VENTAS TOTALES DEL MES</div>
+                    <div class="metric-title">💰 VENTAS SEMANA 1</div>
                     <div class="gauge-container">
                         <div class="gauge-circle">
                             <div class="gauge-inner">
-                                <div class="gauge-percentage">90%</div>
+                                <div class="gauge-percentage">108%</div>
                                 <div class="gauge-label">de la meta</div>
                             </div>
                         </div>
                     </div>
                     <div class="separator-line"></div>
-                    <div class="metric-main">$101,108</div>
-                    <div class="metric-meta">Meta mensual: $112,000</div>
-                    <div class="deficit">Déficit: -$10,892 (10%)</div>
+                    <div class="metric-main">$32,266</div>
+                    <div class="metric-meta">Meta semanal: $30,000</div>
+                    <div class="surplus">Superávit: +$2,266 (7.6%)</div>
                 </div>
                 
                 <div class="main-metric-card">
@@ -890,184 +458,59 @@
                     <div class="gauge-container">
                         <div class="gauge-circle">
                             <div class="gauge-inner">
-                                <div class="gauge-percentage">90%</div>
+                                <div class="gauge-percentage">115%</div>
                                 <div class="gauge-label">de la meta</div>
                             </div>
                         </div>
                     </div>
                     <div class="separator-line"></div>
-                    <div class="metric-main">$3,370</div>
-                    <div class="metric-meta">Meta diaria: $3,733</div>
-                    <div class="deficit">Déficit: -$363</div>
+                    <div class="metric-main">$4,609</div>
+                    <div class="metric-meta">Meta diaria: $4,000</div>
+                    <div class="surplus">Superávit: +$609 (15%)</div>
                 </div>
             </div>
         </div>
         
         <div class="content">
             <div class="comparison-section">
-                <div class="comparison-title">📊 EVOLUCIÓN SEMANAL - SEPTIEMBRE</div>
+                <div class="comparison-title">🎯 ANÁLISIS SEMANA 1</div>
                 
-                <div class="chart-container">
-                    <div class="chart-title">% de Cumplimiento por Semana vs Meta</div>
-                    <div class="chart-legend">
-                        <div class="legend-item">
-                            <div class="legend-line average"></div>
-                            <span class="legend-text">PROMEDIO SEPT 90%</span>
+                <div class="week-highlight">
+                    <h3>🏆 ¡Gran Inicio de Octubre!</h3>
+                    <div class="week-stats">
+                        <div class="week-stat">
+                            <div class="week-stat-value">108%</div>
+                            <div class="week-stat-label">Cumplimiento semanal</div>
                         </div>
-                    </div>
-                    <div class="bar-chart">
-                        <div class="y-axis">
-                            <div class="y-label">100%</div>
-                            <div class="y-label">80%</div>
-                            <div class="y-label">60%</div>
-                            <div class="y-label">40%</div>
-                            <div class="y-label">20%</div>
-                            <div class="y-label">0%</div>
+                        <div class="week-stat">
+                            <div class="week-stat-value">+$2,266</div>
+                            <div class="week-stat-label">Sobre la meta</div>
                         </div>
-                        <div class="grid-lines">
-                            <div class="grid-line" style="bottom: 100%;"></div>
-                            <div class="grid-line average" style="bottom: 90%;"></div>
-                            <div class="grid-line" style="bottom: 80%;"></div>
-                            <div class="grid-line" style="bottom: 60%;"></div>
-                            <div class="grid-line" style="bottom: 40%;"></div>
-                            <div class="grid-line" style="bottom: 20%;"></div>
-                            <div class="grid-line" style="bottom: 0%;"></div>
-                        </div>
-                        <div class="bar-item">
-                            <div class="bar s1" style="height: 210px !important; max-height: 210px !important; min-height: 210px !important;">
-                                <span class="bar-ranking">#3</span>
-                                <span class="bar-value">84%</span>
-                            </div>
-                            <div class="bar-label">Semana 1</div>
-                        </div>
-                        <div class="bar-item">
-                            <div class="bar s2" style="height: 230px !important; max-height: 230px !important; min-height: 230px !important;">
-                                <span class="bar-ranking">#2</span>
-                                <span class="bar-value">92%</span>
-                            </div>
-                            <div class="bar-label">Semana 2</div>
-                        </div>
-                        <div class="bar-item">
-                            <div class="bar s3" style="height: 212px !important; max-height: 212px !important; min-height: 212px !important;">
-                                <span class="bar-ranking">#4</span>
-                                <span class="bar-value">85%</span>
-                            </div>
-                            <div class="bar-label">Semana 3</div>
-                        </div>
-                        <div class="bar-item">
-                            <div class="bar s4" style="height: 250px !important; max-height: 250px !important; min-height: 250px !important;">
-                                <span class="bar-ranking">#1 🏆</span>
-                                <span class="bar-value">100%</span>
-                            </div>
-                            <div class="bar-label">Semana 4</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="weeks-comparison">
-                    <div class="week-card week1">
-                        <div class="week-title">📅 SEMANA 1</div>
-                        <div class="week-metrics">
-                            <div class="week-metric">
-                                <span class="week-metric-label">Ventas:</span>
-                                <span class="week-metric-value">$23,553</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">Promedio:</span>
-                                <span class="week-metric-value">$3,365</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Meta:</span>
-                                <span class="week-metric-value">84%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="week-card week2">
-                        <div class="week-title">📅 SEMANA 2 ⭐</div>
-                        <div class="week-metrics">
-                            <div class="week-metric">
-                                <span class="week-metric-label">Ventas:</span>
-                                <span class="week-metric-value">$25,805</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">Promedio:</span>
-                                <span class="week-metric-value">$3,686</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Meta:</span>
-                                <span class="week-metric-value improvement">92%</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Sem1:</span>
-                                <span class="week-metric-value improvement">+9.6%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="week-card week3">
-                        <div class="week-title">📅 SEMANA 3</div>
-                        <div class="week-metrics">
-                            <div class="week-metric">
-                                <span class="week-metric-label">Ventas:</span>
-                                <span class="week-metric-value">$23,789</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">Promedio:</span>
-                                <span class="week-metric-value">$3,398</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Meta:</span>
-                                <span class="week-metric-value">85%</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Sem2:</span>
-                                <span class="week-metric-value decline">-7.8%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="week-card week4">
-                        <div class="week-title">📅 SEMANA 4 🏆</div>
-                        <div class="week-metrics">
-                            <div class="week-metric">
-                                <span class="week-metric-label">Ventas:</span>
-                                <span class="week-metric-value">$27,961</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">Promedio:</span>
-                                <span class="week-metric-value">$3,107</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Meta:</span>
-                                <span class="week-metric-value improvement">100%</span>
-                            </div>
-                            <div class="week-metric">
-                                <span class="week-metric-label">vs Sem3:</span>
-                                <span class="week-metric-value improvement">+17.5%</span>
-                            </div>
+                        <div class="week-stat">
+                            <div class="week-stat-value">+37%</div>
+                            <div class="week-stat-label">vs Semana 1 Sept</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="insights-section">
-                    <div class="insights-title">💡 Insights Clave del Mes</div>
+                    <div class="insights-title">💡 Insights Clave</div>
                     <div class="insights-grid">
                         <div class="insight-item">
-                            <div class="insight-icon">🎯</div>
-                            <div class="insight-text"><strong>Excelente resultado:</strong> 90% de cumplimiento mensual, solo 10% por debajo de la meta</div>
+                            <div class="insight-icon">🚀</div>
+                            <div class="insight-text"><strong>Mejor inicio:</strong> Superamos la meta semanal en el primer intento de octubre, algo que no logramos en ninguna semana completa de septiembre excepto la última</div>
                         </div>
                         <div class="insight-item">
                             <div class="insight-icon">📈</div>
-                            <div class="insight-text"><strong>Consistencia:</strong> Todas las semanas entre 84-92%, mostrando estabilidad</div>
-                        </div>
-                        <div class="insight-item">
-                            <div class="insight-icon">🏆</div>
-                            <div class="insight-text"><strong>Cierre fuerte:</strong> Semana 4 alcanzó 100% de la meta con $27,961</div>
+                            <div class="insight-text"><strong>Promedio diario:</strong> $4,609 está 15% por encima de la meta diaria, excelente ritmo</div>
                         </div>
                         <div class="insight-item">
                             <div class="insight-icon">💪</div>
-                            <div class="insight-text"><strong>Capacidad probada:</strong> El equipo puede alcanzar y superar metas cuando se enfoca</div>
+                            <div class="insight-text"><strong>Crecimiento:</strong> +37% vs la primera semana de septiembre ($23,553 → $32,266)</div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">🎯</div>
+                            <div class="insight-text"><strong>Proyección:</strong> Si mantenemos este ritmo, cerraríamos octubre con ~$139,000 (116% de la meta)</div>
                         </div>
                     </div>
                 </div>
@@ -1075,70 +518,73 @@
         </div>
         
         <div class="analysis-section">
-            <div class="analysis-title">🔍 ANÁLISIS FINAL - SEPTIEMBRE 2025</div>
+            <div class="analysis-title">🔍 PROGRESO MENSUAL</div>
             
             <div class="analysis-grid">
                 <div class="analysis-item">
-                    <div class="analysis-value improvement">90%</div>
-                    <div class="analysis-label">Cumplimiento mensual</div>
-                    <div class="analysis-sublabel">$101,108 de $112,000</div>
+                    <div class="analysis-value surplus">27%</div>
+                    <div class="analysis-label">Del mes completado</div>
+                    <div class="analysis-sublabel">Semana 1 de 4</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value improvement">$27,961</div>
-                    <div class="analysis-label">Mejor semana</div>
-                    <div class="analysis-sublabel">Semana 4 (100% meta)</div>
+                    <div class="analysis-value surplus">$32,266</div>
+                    <div class="analysis-label">Acumulado octubre</div>
+                    <div class="analysis-sublabel">De $120,000 meta</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value">$23,553</div>
-                    <div class="analysis-label">Semana más baja</div>
-                    <div class="analysis-sublabel">Semana 1 (84% meta)</div>
+                    <div class="analysis-value surplus">$87,734</div>
+                    <div class="analysis-label">Por facturar</div>
+                    <div class="analysis-sublabel">En 23 días restantes</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value">$3,370</div>
-                    <div class="analysis-label">Promedio diario real</div>
-                    <div class="analysis-sublabel">vs $3,733 esperado</div>
+                    <div class="analysis-value">$4,609</div>
+                    <div class="analysis-label">Promedio diario actual</div>
+                    <div class="analysis-sublabel">vs $4,000 meta</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value improvement">88%</div>
-                    <div class="analysis-label">Promedio consistencia</div>
-                    <div class="analysis-sublabel">Todas las semanas 84-100%</div>
+                    <div class="analysis-value">$3,815</div>
+                    <div class="analysis-label">Promedio diario requerido</div>
+                    <div class="analysis-sublabel">Para resto del mes</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value deficit">-$10,892</div>
-                    <div class="analysis-label">Déficit total del mes</div>
-                    <div class="analysis-sublabel">Solo 10% por debajo</div>
+                    <div class="analysis-value surplus">+$8,713</div>
+                    <div class="analysis-label">Vs septiembre S1</div>
+                    <div class="analysis-sublabel">Mejora significativa</div>
                 </div>
             </div>
         </div>
         
         <div class="action-section">
-            <div class="action-title">🚀 LECCIONES Y PLAN PARA OCTUBRE</div>
+            <div class="action-title">🚀 ESTRATEGIA PARA OCTUBRE</div>
             
             <div class="action-list">
-                <h4>✅ Fortalezas de Septiembre:</h4>
+                <h4>✅ Lo que está funcionando:</h4>
                 <ul>
-                    <li>Excelente consistencia: todas las semanas entre 84-100%</li>
-                    <li>Cierre fuerte del mes (Semana 4 al 100%)</li>
-                    <li>90% de cumplimiento mensual es un resultado sólido</li>
-                    <li>Capacidad demostrada de recuperación y mejora continua</li>
+                    <li>Inicio fuerte del mes: +108% de cumplimiento semanal</li>
+                    <li>Promedio diario consistente sobre la meta (+15%)</li>
+                    <li>Mejora notable vs septiembre (+37% primera semana)</li>
+                    <li>Equipo enfocado y con momentum positivo</li>
                 </ul>
             </div>
             
             <div class="action-list">
-                <h4>🎯 Objetivos para Octubre:</h4>
+                <h4>🎯 Plan para las próximas 3 semanas:</h4>
                 <ul>
-                    <li>Meta: Alcanzar 95%+ de cumplimiento mensual</li>
-                    <li>Mantener la consistencia demostrada en septiembre</li>
-                    <li>Replicar el desempeño de la Semana 4 en más semanas</li>
-                    <li>Minimizar el gap de inicio de mes (Semana 1 al 84%)</li>
-                    <li>Capitalizar el momentum del cierre exitoso de septiembre</li>
+                    <li>Mantener el promedio diario actual de $4,609 o superior</li>
+                    <li>Si mantenemos este ritmo, superaremos la meta mensual</li>
+                    <li>El promedio requerido bajó a solo $3,815 diarios (muy alcanzable)</li>
+                    <li>Enfoque en consistencia, no en picos y valles</li>
+                    <li>Celebrar wins pequeños para mantener motivación alta</li>
                 </ul>
             </div>
             
             <div class="projection">
-                <strong>🎯 Meta Octubre 2025:</strong><br>
-                Con el desempeño sólido de septiembre (90%), establecemos una meta de <strong>$120,000 mensuales</strong>
-                <br><em>Objetivo realista: Alcanzar <strong>$114,000</strong> (95% de la meta) - esto representa un crecimiento del 13% vs septiembre</em>
-                <br><br><strong>Foco principal:</strong> Mejorar el arranque del mes y mantener consistencia entre 90-100% semanal
+                <strong>🎯 Proyección Octubre 2025:</strong><br>
+                Con el excelente inicio de Semana 1, tenemos <strong>$2,266 de colchón</strong>
+                <br><em>Meta ajustada para resto del mes: $87,734 en 23 días ($3,815 diarios)</em>
+                <br><br><strong>Si mantenemos el ritmo actual:</strong> Proyección de ~$139,000 (116% de meta) 🚀
             </div>
-        
+        </div>
+    </div>
+</body>
+</html>
