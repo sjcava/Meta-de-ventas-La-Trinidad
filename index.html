@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Ventas - Primera Semana Octubre 2025</title>
+    <title>Reporte de Ventas - Primeras Dos Semanas Octubre 2025</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -94,8 +94,8 @@
             height: 140px;
             border-radius: 50%;
             background: conic-gradient(
-                #0A9561 0deg 387deg,
-                #e6e6e6 387deg 360deg
+                #0A9561 0deg 385.2deg,
+                #e6e6e6 385.2deg 360deg
             );
             position: relative;
             display: flex;
@@ -172,41 +172,55 @@
             font-weight: 600;
         }
         
-        .week-highlight {
-            background: linear-gradient(135deg, #0A9561, #7CC141);
-            border-radius: 12px;
-            padding: 30px;
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .week-highlight h3 {
-            font-size: 1.8em;
+        .weeks-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             margin-bottom: 20px;
         }
         
-        .week-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        
-        .week-stat {
-            background: rgba(255,255,255,0.15);
+        .week-card {
+            background: white;
+            border-radius: 12px;
             padding: 20px;
-            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            border-left: 5px solid #0A9561;
         }
         
-        .week-stat-value {
-            font-size: 1.8em;
+        .week-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #0A9561;
+        }
+        
+        .week-metrics {
+            display: grid;
+            gap: 8px;
+        }
+        
+        .week-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .week-metric:last-child {
+            border-bottom: none;
+        }
+        
+        .week-metric-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+        
+        .week-metric-value {
             font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .week-stat-label {
+            color: #333;
             font-size: 0.9em;
-            opacity: 0.9;
         }
         
         .insights-section {
@@ -397,7 +411,7 @@
                 font-size: 1.8em;
             }
             
-            .week-stats {
+            .weeks-comparison {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
@@ -427,30 +441,30 @@
 <body>
     <div class="container">
         <div class="alert-banner">
-            🎉 ¡EXCELENTE INICIO! Semana 1 superó la meta en +7.6% • Mejor comienzo que septiembre
+            🎉 CONSISTENCIA PERFECTA: 2 semanas sobre meta (107%) • Mejor desempeño que septiembre
         </div>
         
         <div class="header">
             <h1>📊 REPORTE DE VENTAS OCTUBRE</h1>
-            <p>Primera Semana • 01-07 OCTUBRE 2025</p>
+            <p>Primeras Dos Semanas • 01-14 OCTUBRE 2025</p>
         </div>
         
         <div class="summary-section">
             <div class="main-metrics">
                 <div class="main-metric-card">
-                    <div class="metric-title">💰 VENTAS SEMANA 1</div>
+                    <div class="metric-title">💰 VENTAS ACUMULADAS</div>
                     <div class="gauge-container">
                         <div class="gauge-circle">
                             <div class="gauge-inner">
-                                <div class="gauge-percentage">108%</div>
+                                <div class="gauge-percentage">107%</div>
                                 <div class="gauge-label">de la meta</div>
                             </div>
                         </div>
                     </div>
                     <div class="separator-line"></div>
-                    <div class="metric-main">$32,266</div>
-                    <div class="metric-meta">Meta semanal: $30,000</div>
-                    <div class="surplus">Superávit: +$2,266 (7.6%)</div>
+                    <div class="metric-main">$64,329</div>
+                    <div class="metric-meta">Meta 2 semanas: $60,000</div>
+                    <div class="surplus">Superávit: +$4,329 (7.2%)</div>
                 </div>
                 
                 <div class="main-metric-card">
@@ -464,31 +478,63 @@
                         </div>
                     </div>
                     <div class="separator-line"></div>
-                    <div class="metric-main">$4,609</div>
+                    <div class="metric-main">$4,595</div>
                     <div class="metric-meta">Meta diaria: $4,000</div>
-                    <div class="surplus">Superávit: +$609 (15%)</div>
+                    <div class="surplus">Superávit: +$595 (15%)</div>
                 </div>
             </div>
         </div>
         
         <div class="content">
             <div class="comparison-section">
-                <div class="comparison-title">🎯 ANÁLISIS SEMANA 1</div>
+                <div class="comparison-title">📊 COMPARATIVO SEMANAL</div>
                 
-                <div class="week-highlight">
-                    <h3>🏆 ¡Gran Inicio de Octubre!</h3>
-                    <div class="week-stats">
-                        <div class="week-stat">
-                            <div class="week-stat-value">108%</div>
-                            <div class="week-stat-label">Cumplimiento semanal</div>
+                <div class="weeks-comparison">
+                    <div class="week-card">
+                        <div class="week-title">📅 SEMANA 1 (01-07 OCT)</div>
+                        <div class="week-metrics">
+                            <div class="week-metric">
+                                <span class="week-metric-label">Ventas:</span>
+                                <span class="week-metric-value">$32,266</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">Promedio:</span>
+                                <span class="week-metric-value">$4,609</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">vs Meta:</span>
+                                <span class="week-metric-value surplus">108%</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">Superávit:</span>
+                                <span class="week-metric-value surplus">+$2,266</span>
+                            </div>
                         </div>
-                        <div class="week-stat">
-                            <div class="week-stat-value">+$2,266</div>
-                            <div class="week-stat-label">Sobre la meta</div>
-                        </div>
-                        <div class="week-stat">
-                            <div class="week-stat-value">+37%</div>
-                            <div class="week-stat-label">vs Semana 1 Sept</div>
+                    </div>
+                    
+                    <div class="week-card">
+                        <div class="week-title">📅 SEMANA 2 (08-14 OCT)</div>
+                        <div class="week-metrics">
+                            <div class="week-metric">
+                                <span class="week-metric-label">Ventas:</span>
+                                <span class="week-metric-value">$32,063</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">Promedio:</span>
+                                <span class="week-metric-value">$4,580</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">vs Meta:</span>
+                                <span class="week-metric-value surplus">107%</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">Superávit:</span>
+                                <span class="week-metric-value surplus">+$2,063</span>
+                            </div>
+                            <div class="week-metric">
+                                <span class="week-metric-label">vs Semana 1:</span>
+                                <span class="week-metric-value">-0.6%</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -497,20 +543,20 @@
                     <div class="insights-title">💡 Insights Clave</div>
                     <div class="insights-grid">
                         <div class="insight-item">
-                            <div class="insight-icon">🚀</div>
-                            <div class="insight-text"><strong>Mejor inicio:</strong> Superamos la meta semanal en el primer intento de octubre, algo que no logramos en ninguna semana completa de septiembre excepto la última</div>
+                            <div class="insight-icon">🎯</div>
+                            <div class="insight-text"><strong>Consistencia excepcional:</strong> Ambas semanas sobre 107%, variación de solo 0.6% entre ellas</div>
                         </div>
                         <div class="insight-item">
                             <div class="insight-icon">📈</div>
-                            <div class="insight-text"><strong>Promedio diario:</strong> $4,609 está 15% por encima de la meta diaria, excelente ritmo</div>
+                            <div class="insight-text"><strong>Muy superior a septiembre:</strong> +30% vs las primeras dos semanas de septiembre ($49,358 → $64,329)</div>
                         </div>
                         <div class="insight-item">
                             <div class="insight-icon">💪</div>
-                            <div class="insight-text"><strong>Crecimiento:</strong> +37% vs la primera semana de septiembre ($23,553 → $32,266)</div>
+                            <div class="insight-text"><strong>Colchón acumulado:</strong> $4,329 de superávit da flexibilidad para el resto del mes</div>
                         </div>
                         <div class="insight-item">
-                            <div class="insight-icon">🎯</div>
-                            <div class="insight-text"><strong>Proyección:</strong> Si mantenemos este ritmo, cerraríamos octubre con ~$139,000 (116% de la meta)</div>
+                            <div class="insight-icon">🚀</div>
+                            <div class="insight-text"><strong>Proyección optimista:</strong> Al ritmo actual, cerraríamos con ~$138,000 (115% de la meta)</div>
                         </div>
                     </div>
                 </div>
@@ -522,67 +568,67 @@
             
             <div class="analysis-grid">
                 <div class="analysis-item">
-                    <div class="analysis-value surplus">27%</div>
+                    <div class="analysis-value surplus">54%</div>
                     <div class="analysis-label">Del mes completado</div>
-                    <div class="analysis-sublabel">Semana 1 de 4</div>
+                    <div class="analysis-sublabel">Semanas 1 y 2 de 4</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value surplus">$32,266</div>
+                    <div class="analysis-value surplus">$64,329</div>
                     <div class="analysis-label">Acumulado octubre</div>
                     <div class="analysis-sublabel">De $120,000 meta</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value surplus">$87,734</div>
+                    <div class="analysis-value surplus">107%</div>
+                    <div class="analysis-label">Cumplimiento promedio</div>
+                    <div class="analysis-sublabel">Ambas semanas</div>
+                </div>
+                <div class="analysis-item">
+                    <div class="analysis-value">$55,671</div>
                     <div class="analysis-label">Por facturar</div>
-                    <div class="analysis-sublabel">En 23 días restantes</div>
+                    <div class="analysis-sublabel">En 16 días restantes</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value">$4,609</div>
-                    <div class="analysis-label">Promedio diario actual</div>
-                    <div class="analysis-sublabel">vs $4,000 meta</div>
-                </div>
-                <div class="analysis-item">
-                    <div class="analysis-value">$3,815</div>
+                    <div class="analysis-value">$3,479</div>
                     <div class="analysis-label">Promedio diario requerido</div>
                     <div class="analysis-sublabel">Para resto del mes</div>
                 </div>
                 <div class="analysis-item">
-                    <div class="analysis-value surplus">+$8,713</div>
-                    <div class="analysis-label">Vs septiembre S1</div>
-                    <div class="analysis-sublabel">Mejora significativa</div>
+                    <div class="analysis-value surplus">+$14,971</div>
+                    <div class="analysis-label">Vs septiembre (2 sem)</div>
+                    <div class="analysis-sublabel">+30% de mejora</div>
                 </div>
             </div>
         </div>
         
         <div class="action-section">
-            <div class="action-title">🚀 ESTRATEGIA PARA OCTUBRE</div>
+            <div class="action-title">🚀 ESTRATEGIA PARA SEMANAS 3 Y 4</div>
             
             <div class="action-list">
-                <h4>✅ Lo que está funcionando:</h4>
+                <h4>✅ Fortalezas demostradas:</h4>
                 <ul>
-                    <li>Inicio fuerte del mes: +108% de cumplimiento semanal</li>
-                    <li>Promedio diario consistente sobre la meta (+15%)</li>
-                    <li>Mejora notable vs septiembre (+37% primera semana)</li>
-                    <li>Equipo enfocado y con momentum positivo</li>
+                    <li>Consistencia perfecta: 107-108% en ambas semanas</li>
+                    <li>Promedio diario estable: $4,580-$4,609 (ambos sobre meta)</li>
+                    <li>Superávit acumulado de $4,329 como colchón</li>
+                    <li>+30% de mejora vs mismo período septiembre</li>
                 </ul>
             </div>
             
             <div class="action-list">
-                <h4>🎯 Plan para las próximas 3 semanas:</h4>
+                <h4>🎯 Objetivos finales octubre:</h4>
                 <ul>
-                    <li>Mantener el promedio diario actual de $4,609 o superior</li>
-                    <li>Si mantenemos este ritmo, superaremos la meta mensual</li>
-                    <li>El promedio requerido bajó a solo $3,815 diarios (muy alcanzable)</li>
-                    <li>Enfoque en consistencia, no en picos y valles</li>
-                    <li>Celebrar wins pequeños para mantener motivación alta</li>
+                    <li>Meta reducida: Solo necesitamos $3,479 diarios (vs $4,595 actual)</li>
+                    <li>Mantener consistencia: Evitar caídas como semana 3 de septiembre</li>
+                    <li>Si sostenemos ritmo actual: Cerraremos ~115% de meta</li>
+                    <li>Meta realista: Alcanzar $114,000 (95% de meta original + superávit actual)</li>
+                    <li>Meta optimista: Superar $120,000 y cerrar por encima del 100%</li>
                 </ul>
             </div>
             
             <div class="projection">
-                <strong>🎯 Proyección Octubre 2025:</strong><br>
-                Con el excelente inicio de Semana 1, tenemos <strong>$2,266 de colchón</strong>
-                <br><em>Meta ajustada para resto del mes: $87,734 en 23 días ($3,815 diarios)</em>
-                <br><br><strong>Si mantenemos el ritmo actual:</strong> Proyección de ~$139,000 (116% de meta) 🚀
+                <strong>🎯 Proyección Final Octubre:</strong><br>
+                Con 2 semanas excelentes, tenemos <strong>$4,329 de colchón acumulado</strong>
+                <br><em>Meta ajustada: $55,671 en 16 días ($3,479 diarios - 24% menos que promedio actual)</em>
+                <br><br><strong>Proyección al ritmo actual:</strong> ~$138,000 (115% de meta) 🎉
             </div>
         </div>
     </div>
